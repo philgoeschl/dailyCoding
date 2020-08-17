@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css">
+    <script src="index.js"></script>
+</head>
+<body>
+    <h1>Border Radius Previewer</h1>
+    <div class="controls">
+        <input type="range" id="top-left" name="top-left" value="0" min="0" max="100" oninput="updateRadius('top-left')">
+        <label for="top-left">Top Left</label>
+        <br/>
+        <input type="range" id="top-right" name="top-right" value="0" min="0" max="100" oninput="updateRadius('top-right')">
+        <label for="top-right">Top Right</label>
+        <br/>
+        <input type="range" id="bottom-left" name="bottom-left" value="0" min="0" max="100" oninput="updateRadius('bottom-left')">
+        <label for="bottom-left">Bottom Left</label>
+        <br/>
+        <input type="range" id="bottom-right" name="bottom-right" value="0" min="0" max="100" oninput="updateRadius('bottom-right')">
+        <label for="bottom-right">Bottom Right</label>
+        <br/>
+    </div>
+    <br/>
+    <div id="shape" class="shape radius"></div>
+    <br/>
+    <div>
+        <input type="text" id="shape-radius-css" readonly>
+
+    </input>
+        <button onclick="copyToClipboard()">Copy CSS to Clipboard</button>
+    </div>
+</body>
+</html>

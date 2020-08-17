@@ -1,0 +1,19 @@
+:root {
+    --top-left: 0%;
+    --top-right: 0%;
+    --bottom-left: 0%;
+    --bottom-right: 0%;
+}
+
+.shape {
+    background-color: teal;
+    width: 400px;
+    height: 400px;
+}
+
+.radius {
+    border-top-left-radius: var(--top-left);
+    border-top-right-radius: var(--top-right);
+    border-bottom-left-radius: var(--bottom-left);
+    border-bottom-right-radius: var(--bottom-right);
+}
