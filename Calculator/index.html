@@ -13,75 +13,83 @@
     <h1>Calculator</h1>
     <div class="calculator-container">
         <div class="display">
-            <input id="inputField" class="input-field" readonly>
+            
         </div>
-        <div class="buttons">
-            <table>
+        <div class="controls">
+            <table class="table">
                 <tr>
-                    <th>
-                        <button onclick="ClearInputField()" id="clear">C</button>
-                    </th>
-                    <th>
-                        <button onclick="ClearEverything()" id="clearEverything">CE</button>
-                    </th>
-                    <th>
-                        <button onclick="SelectOperation('modulo')" id="modulo">%</button>
-                    </th>
-                    <th>
-                        <button onclick="SelectOperation('divide')" id="divide">/</button>
+                    <th colspan="4">
+                        <input id="inputField" class="input-field" readonly>
                     </th>
                 </tr>
                 <tr>
                     <th>
-                        <button onclick="AddInput(7)" id="7">7</button>
+                        <button class="button" onclick="ClearInputField()" id="clear">C</button>
                     </th>
                     <th>
-                        <button onclick="AddInput(8)" id="8">8</button>
+                        <button class="button" onclick="ClearEverything()" id="clearEverything">CE</button>
                     </th>
                     <th>
-                        <button onclick="AddInput(9)" id="9">9</button>
+                        <button class="button" onclick="SelectOperation('modulo')" id="modulo">%</button>
                     </th>
                     <th>
-                        <button onclick="SelectOperation('multiply')" id="multiply">x</button>
+                        <button class="button" onclick="SelectOperation('divide')" id="divide">/</button>
                     </th>
                 </tr>
                 <tr>
                     <th>
-                        <button onclick="AddInput(4)" id="4">4</button>
+                        <button class="button" onclick="AddInput(7)" id="7">7</button>
                     </th>
                     <th>
-                        <button onclick="AddInput(5)" id="5">5</button>
+                        <button class="button" onclick="AddInput(8)" id="8">8</button>
                     </th>
                     <th>
-                        <button onclick="AddInput(6)" id="6">6</button>
+                        <button class="button" onclick="AddInput(9)" id="9">9</button>
                     </th>
                     <th>
-                        <button onclick="SelectOperation('substract')" id="substract">-</button>
+                        <button class="button" onclick="SelectOperation('multiply')" id="multiply">x</button>
                     </th>
                 </tr>
                 <tr>
                     <th>
-                        <button onclick="AddInput(1)" id="1">1</button>
+                        <button class="button" onclick="AddInput(4)" id="4">4</button>
                     </th>
                     <th>
-                        <button onclick="AddInput(2)" id="2">2</button>
+                        <button class="button" onclick="AddInput(5)" id="5">5</button>
                     </th>
                     <th>
-                        <button onclick="AddInput(3)" id="3">3</button>
+                        <button class="button" onclick="AddInput(6)" id="6">6</button>
                     </th>
                     <th>
-                        <button onclick="SelectOperation('add')" id="add">+</button>
+                        <button class="button" onclick="SelectOperation('substract')" id="substract">-</button>
                     </th>
                 </tr>
                 <tr>
-                    <th colspan="2">
-                        <button onclick="AddInput(0)" id="0">0</button>
+                    <th>
+                        <button class="button" onclick="AddInput(1)" id="1">1</button>
                     </th>
                     <th>
-                        <button onclick="AddInput('.')" id="3">.</button>
+                        <button class="button" onclick="AddInput(2)" id="2">2</button>
                     </th>
                     <th>
-                        <button onclick="Calculate()" id="calculate">=</button>
+                        <button class="button" onclick="AddInput(3)" id="3">3</button>
+                    </th>
+                    <th>
+                        <button class="button" onclick="SelectOperation('add')" id="add">+</button>
+                    </th>
+                </tr>
+                <tr>
+                    <th>
+
+                    </th>
+                    <th> 
+                        <button class="button" onclick="AddInput(0)" id="0">0</button>
+                    </th>
+                    <th>
+                        <button class="button" onclick="AddInput('.')" id="3">.</button>
+                    </th>
+                    <th>
+                        <button class="button" onclick="Calculate()" id="calculate">=</button>
                     </th>
                 </tr>
             </table>

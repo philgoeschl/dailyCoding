@@ -1,0 +1,41 @@
+body {
+    background-color: lightgray;
+}
+
+.calculator-container {
+    background-color: teal;
+    margin: auto;
+    max-width: 350px;
+    padding: 0px;
+    border-radius: 10px;
+}
+
+.input-field {
+    background-color: orange;
+    width: 90%;
+    padding: 10px 10px;
+    margin: 15px auto;
+    border: none;
+    height: 60px;
+    font-size: xx-large;
+}
+
+.table {
+    width: 100%;
+}
+
+.button {
+    background-color: orange;
+    border: none;
+    color: black;
+    padding: 10px 10px;
+    margin: 5px auto;
+    width: 70px;
+    height: 60px;
+    border-radius: 10px;
+    font-size: x-large;
+}
+
+.controls {
+
+}
