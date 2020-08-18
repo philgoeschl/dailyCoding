@@ -1,55 +1,75 @@
 var currentValue = 0;
 var currentOperation = '';
+var isOperationSelected = false;
+
+var num1 = 0;
+var num2 = 0;
 
 
 function AddInput(number) {
+    if (isOperationSelected) {
+        ClearInputField();
+        isOperationSelected = false;
+    }
     var inputValue = document.getElementById('inputField');
-    if (inputValue.value.length <=7) {
+    if (inputValue.value.length <= 7) {
         inputValue.value += number;
     }
 }
 
-function SelectOperation(operation) {
-    console.log(operation);
-    currentValue = parseFloat(document.getElementById('inputField').value)
-    currentOperation = operation;
-    console.log('currentValue: ', currentValue, '| currentOperation: ',currentOperation);
-    document.getElementById('inputField').value = '';
+function SelectOperation(operation, symbol) {
+    // if num1 and operation are set, store value to num2 and then calculate the result, store to num1 and show it!
+    if (currentOperation != '') {
+        currentOperation = operation;
+        Calculate();
+        document.getElementById('inputField').value = num1 + symbol;
+    } else {
+        num1 = parseFloat(document.getElementById('inputField').value)
+        currentOperation = operation;
+        document.getElementById('inputField').value = num1 + symbol;
+        isOperationSelected = true;
+    }
+
+
+
 }
 
 function Calculate() {
-    var num1 = currentValue;
-    var num2 = parseFloat(document.getElementById('inputField').value);
-    var result;
 
-    console.log('currentOperation: ', currentOperation);
+    num2 = parseFloat(document.getElementById('inputField').value);
 
-    switch(currentOperation) {
+    console.log('calculate: ', num1, num2);
+
+    switch (currentOperation) {
         case 'add':
-            result = num1+num2;
-            result.toString().length > 7 ? result = 'OUT OF RANGE' : result
+            num1 = num1 + num2;
+            num1.toString().length > 7 ? num1 = 'OUT OF RANGE' : num1
             break
         case 'substract':
-            result = num1 - num2
+            num1 = num1 - num2
             break
         case 'multiply':
-            result = num1 * num2;
-            result.toString().length > 7 ? result = 'OUT OF RANGE' : result
+            num1 = num1 * num2;
+            num1.toString().length > 7 ? num1 = 'OUT OF RANGE' : num1
             break
         case 'divide':
-            num2 != 0 ? result = num1 / num2 : result = 'NOT POSSIBLE';
+            num2 != 0 ? num1 = num1 / num2 : num1 = 'NOT POSSIBLE';
             break
         default:
             break
     }
-    if(result){
-        document.getElementById('inputField').value = result;
+    if (num1) {
+        document.getElementById('inputField').value = num1;
     }
+    num2 = 0;
+    currentOperation = '';
+
+    console.log('num1: ', num1);
+    console.log('num2: ', num2);
 
 }
 
 function ClearInputField() {
-    console.log('clear input field...');
     document.getElementById('inputField').value = '';
 }
 
