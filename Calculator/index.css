@@ -1,17 +1,19 @@
 body {
-    background-color: lightgray;
+    background: #614385;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #516395, #614385);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #516395, #614385); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
 .calculator-container {
-    background-color: teal;
-    margin: auto;
+    background: #332346;
+    margin: 100px auto;
     max-width: 350px;
     padding: 0px;
-    border-radius: 10px;
 }
 
 .input-field {
-    background-color: orange;
+    background-color: #5a6ea5;
+    color: #ced4e5;
     width: 90%;
     padding: 10px 10px;
     margin: 15px auto;
@@ -25,17 +27,19 @@ body {
 }
 
 .button {
-    background-color: orange;
+    background-color: #5a6ea5;
     border: none;
-    color: black;
+    color: #ced4e5;
     padding: 10px 10px;
     margin: 5px auto;
     width: 70px;
     height: 60px;
-    border-radius: 10px;
     font-size: x-large;
 }
 
-.controls {
+.button-secondary {
+    background-color: #bc2c3d;
+}
 
+.controls {
 }
