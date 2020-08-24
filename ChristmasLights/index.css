@@ -1,5 +1,6 @@
 :root {
     --blinking-interval: 2;
+    --blinking-state: 'running';
 }
 
 body{ 
@@ -8,7 +9,32 @@ body{
     background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+button {
+    border-style: none;
+    border-color: white;
+    width: 25%;
+    height: 50px;
+    margin: 10px;
+    border-radius: 10px;;
+    font-size: x-large;
+    color: white;
+    background: none;
+}
+
+.start:hover {
+    background: green;
+    transition: 0.2s;
+    box-shadow:0 0 50px green
+}
+
+.stop:hover {
+    background: red;
+    transition: 0.2s;
+    box-shadow:0 0 50px red
+}
+
 .lights {
+    margin-top: 200px;
     display: flex;
     justify-content:space-around;
 }
@@ -18,36 +44,43 @@ body{
     height: 50px;
     background: white;
     border-radius: 25px;
+
 }
 
 .controls {
-    margin-top: 50px;
+    margin-top: 200px;
     display: flex;
     justify-content:center;
 }
 
 .blinking {
     animation: blinker calc(var(--blinking-interval)*1s) ease-in-out infinite;
+    animation-play-state: var(--blinking-state);
 }
 
 .blinking-delay {
     animation: blinker calc(var(--blinking-interval)*1s) ease-in-out infinite;
     animation-delay: calc(var(--blinking-interval)*0.5s);
+    animation-play-state: var(--blinking-state);
 }
 
 @keyframes blinker {
     50% { opacity: 0.2; }
+
 }
 
 .red {
     background: red;
+    box-shadow:0 0 50px red
 }
 
 .blue {
     background: blue;
+    box-shadow:0 0 50px blue
 }
 
 .green {
     background: green;
+    box-shadow:0 0 50px green;
 }
 
