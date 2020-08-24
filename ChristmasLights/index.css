@@ -1,0 +1,53 @@
+:root {
+    --blinking-interval: 2;
+}
+
+body{ 
+    background: #0f0c29;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+}
+
+.lights {
+    display: flex;
+    justify-content:space-around;
+}
+
+.bulb {
+    width: 50px;
+    height: 50px;
+    background: white;
+    border-radius: 25px;
+}
+
+.controls {
+    margin-top: 50px;
+    display: flex;
+    justify-content:center;
+}
+
+.blinking {
+    animation: blinker calc(var(--blinking-interval)*1s) ease-in-out infinite;
+}
+
+.blinking-delay {
+    animation: blinker calc(var(--blinking-interval)*1s) ease-in-out infinite;
+    animation-delay: calc(var(--blinking-interval)*0.5s);
+}
+
+@keyframes blinker {
+    50% { opacity: 0.2; }
+}
+
+.red {
+    background: red;
+}
+
+.blue {
+    background: blue;
+}
+
+.green {
+    background: green;
+}
+
