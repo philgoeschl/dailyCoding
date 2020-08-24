@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,20 +8,26 @@
     <script src="index.js"></script>
     <link rel="stylesheet" href="index.css">
 </head>
+
 <body>
     <div class="lights">
-        <div id="bulb-1" class="bulb blinking red"></div>
-        <div id="bulb-2" class="bulb blinking-delay blue"></div>
-        <div id="bulb-3" class="bulb blinking green"></div>
-        <div id="bulb-4" class="bulb blinking-delay red"></div>
-        <div id="bulb-5" class="bulb blinking blue"></div>
-        <div id="bulb-6" class="bulb blinking-delay green"></div>
-        <div id="bulb-7" class="bulb blinking red"></div>
+        <div id="bulb1" class="bulb blinking red"></div>
+        <div id="bulb2" class="bulb blinking-delay blue"></div>
+        <div id="bulb3" class="bulb blinking green"></div>
+        <div id="bulb4" class="bulb blinking-delay red"></div>
+        <div id="bulb5" class="bulb blinking blue"></div>
+        <div id="bulb6" class="bulb blinking-delay green"></div>
+        <div id="bulb7" class="bulb blinking red"></div>
     </div>
     <div class="controls">
-        <button class="start" onclick="StartBlinking()">Start</button>
-        <button class="stop" onclick="StopBlinking()">Stop</button>
+        <button id="buttonStart" class="start" onclick="StartBlinking()">Start</button>
+        <button id="buttonStop" class="stop" onclick="StopBlinking()">Stop</button>
     </div>
-    
+    <div class="interval-time">
+        <input type="range" id="interval-time" name="interval-time" min="0.25" max="5" value="1" step="0.25"
+            oninput="updateIntervalTime()">
+    </div>
+
 </body>
+
 </html>
