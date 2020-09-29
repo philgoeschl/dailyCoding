@@ -24,7 +24,6 @@ people.forEach(function(item) {
 
 function showPersonDetails(item) {
     personDetails = (people.find(x => x.name === item))
-    console.log(personDetails)
 
     details.innerHTML = `
         Name: ${personDetails.name}</br>
@@ -34,7 +33,6 @@ function showPersonDetails(item) {
         Country: ${personDetails.country}</br>
         Birthday: ${personDetails.birthday}</br>
         Telephone: ${personDetails.telephone}</br>
-        
         `
     
 }
