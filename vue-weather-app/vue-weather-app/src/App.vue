@@ -32,7 +32,7 @@ export default {
   name: "app",
   data() {
     return {
-      api_key: "79ab0ca6444d98a9940cae152311b383",
+      api_key: process.env.VUE_APP_API_KEY,
       url_base: "https://api.openweathermap.org/data/2.5/",
       query: "",
       weather: {},
