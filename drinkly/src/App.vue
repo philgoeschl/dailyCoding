@@ -15,16 +15,22 @@
           class="drink-item"
           v-for="drink in this.drinks.drinks"
           :key="drink.idDrink"
+          
         >
-          <img :src="drink.strDrinkThumb + '/preview'" />
+          <img :src="drink.strDrinkThumb + '/preview'" @click="openDetails(drink.idDrink)"/>
         </div>
+      </div>
+      <div id="drink-details" @click="closeDetails()">
+        <div class="detail-close">X</div>
+        <div class="detail-image">Hier kommt ein bild</div>
+        <div class="detail-name">Cocktail Name</div>
+        <div class="detail-description">Zutaten bla bla bla</div>
       </div>
     </main>
   </div>
 </template>
 
 <script>
-//<div class="drink-name">{{ drink.strDrink }}</div>
 export default {
   name: "app",
   data() {
@@ -49,6 +55,14 @@ export default {
       this.drinks = results;
       console.log(results);
     },
+    openDetails(drinkId) {
+      document.getElementById("drink-details").style.display = "block";
+      console.log("drinkId: ", drinkId);
+    },
+    closeDetails() {
+      document.getElementById("drink-details").style.display = "none";
+      console.log("close detail page");
+    },
   },
 };
 </script>
@@ -70,6 +84,19 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+}
+
+#drink-details {
+  position: fixed;
+  display: none;
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: rgba(0, 0, 0, 0.75);
+  z-index: 10;
 }
 
 main {
@@ -119,5 +146,21 @@ main {
 .drink-item img {
   width: 40vw;
   object-fit: cover;
+}
+
+.detail-close {
+  color: white;
+}
+
+.detail-image {
+  color: white;
+}
+
+.detail-name {
+  color: white;
+}
+
+.detail-description {
+  color: white;
 }
 </style>
