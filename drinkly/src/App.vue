@@ -160,6 +160,10 @@ main {
   overflow: hidden;
 }
 
+.drink-item:hover {
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
+}
+
 .drink-item img {
   width: 100%;
   object-fit: cover;
@@ -175,6 +179,7 @@ main {
 
 .detail-image img {
   max-width: 75vw;
+  box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
 }
 
 .detail-name {
