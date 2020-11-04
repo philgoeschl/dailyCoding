@@ -16,12 +16,7 @@
           v-for="drink in this.drinks.drinks"
           :key="drink.idDrink"
         >
-          <div class="card">
-            <div class="thumbnail">
-              <img :src="drink.strDrinkThumb" />
-            </div>
-            <div class="drink-name">{{ drink.strDrink }}</div>
-          </div>
+          <img :src="drink.strDrinkThumb + '/preview'" />
         </div>
       </div>
     </main>
@@ -29,6 +24,7 @@
 </template>
 
 <script>
+//<div class="drink-name">{{ drink.strDrink }}</div>
 export default {
   name: "app",
   data() {
@@ -74,18 +70,11 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
-  margin-top: 60px;
 }
 
 main {
   min-height: 100vh;
   padding: 25px;
-
-  background-image: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.75)
-  );
 }
 
 .search-box {
@@ -108,53 +97,27 @@ main {
 
   box-shadow: 0px 0px 8px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.5);
-  border-radius: 0px 16px 0px 16px;
   transition: 0.4s;
 }
 
 .search-box .search-bar:focus {
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
   background-color: rgba(255, 255, 255, 0.75);
-  border-radius: 16px 0px 16px 0px;
 }
 
 .results {
   display: flex;
   flex-flow: row wrap;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .drink-item {
-  width: 30vw;
-  margin: 10px;
-}
-
-.card {
-  height: 30vh;
+  width: 40vw;
   overflow: hidden;
-  border-radius: 0px 32px 0px 32px;
-  transition: 0.4s;
 }
 
-.card:hover {
-  border-radius: 32px 0px 32px 0px ;
-}
-
-.thumbnail {
-  
-}
-
-.thumbnail img {
+.drink-item img {
+  width: 40vw;
   object-fit: cover;
-
-}
-
-.thumbnail:hover img {
-  filter: brightness(75%);
-  transition: 0.4s;
-}
-
-.drink-name {
-  z-index: 1;
 }
 </style>
