@@ -22,9 +22,11 @@
       </div>
       <div id="drink-details" @click="closeDetails()">
         <div class="detail-close">X</div>
-        <div class="detail-image">Hier kommt ein bild</div>
-        <div class="detail-name">Cocktail Name</div>
-        <div class="detail-description">Zutaten bla bla bla</div>
+        <div class="detail-image">
+          <img :src="drinkDetails.strDrinkThumb"/>
+        </div>
+        <div class="detail-name">{{drinkDetails.strDrink}}</div>
+        <div class="detail-description">{{drinkDetails.strInstructions}}</div>
       </div>
     </main>
   </div>
@@ -39,6 +41,7 @@ export default {
       url_base: "https://www.thecocktaildb.com/api/json/v1/",
       query: "",
       drinks: {},
+      drinkDetails: {},
     };
   },
   methods: {
@@ -56,8 +59,19 @@ export default {
       console.log(results);
     },
     openDetails(drinkId) {
+      // use spinner here!!!
+      fetch(`${this.url_base}${this.api_key}/lookup.php?i=${drinkId}`)
+      .then((res) => {
+        return res.json();
+      })
+      .then(this.setDrinkDetails);
+
       document.getElementById("drink-details").style.display = "block";
       console.log("drinkId: ", drinkId);
+    },
+    setDrinkDetails(details) {
+      this.drinkDetails = details.drinks[0];
+      console.log(this.drinkDetails);
     },
     closeDetails() {
       document.getElementById("drink-details").style.display = "none";
@@ -153,7 +167,10 @@ main {
 }
 
 .detail-image {
-  color: white;
+}
+
+.detail-image img {
+  width: 60vw;
 }
 
 .detail-name {
