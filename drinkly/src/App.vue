@@ -59,7 +59,7 @@ export default {
       console.log(results);
     },
     openDetails(drinkId) {
-      // use spinner here!!!
+      // TODO: use spinner here e.g.
       fetch(`${this.url_base}${this.api_key}/lookup.php?i=${drinkId}`)
       .then((res) => {
         return res.json();
@@ -75,6 +75,7 @@ export default {
     },
     closeDetails() {
       document.getElementById("drink-details").style.display = "none";
+      this.drinkDetails = {}
       console.log("close detail page");
     },
   },
@@ -165,21 +166,25 @@ main {
 }
 
 .detail-close {
-  color: white;
+  color: black;
 }
 
 .detail-image {
+  margin-top: 12.5vh;
 }
 
 .detail-image img {
-  max-width: 400px;
+  max-width: 75vw;
 }
 
 .detail-name {
-  color: white;
+  color: black;
+  font-size: xx-large;
 }
 
 .detail-description {
-  color: white;
+  color: black;
+  max-width: 75vw;
+  margin: auto;
 }
 </style>
