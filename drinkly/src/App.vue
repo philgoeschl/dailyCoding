@@ -17,7 +17,7 @@
           :key="drink.idDrink"
           
         >
-          <img :src="drink.strDrinkThumb + '/preview'" @click="openDetails(drink.idDrink)"/>
+          <img :src="drink.strDrinkThumb" @click="openDetails(drink.idDrink)"/>
         </div>
       </div>
       <div id="drink-details" @click="closeDetails()">
@@ -98,18 +98,20 @@ body {
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: #2c3e50;
+  max-width: 800px;
+  margin: 0 auto;
 }
 
 #drink-details {
   position: fixed;
   display: none;
-  width: 100vw;
+  max-width: 100vw;
   height: 100vh;
   top: 0;
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(0, 0, 0, 0.75);
+  background-color: rgba(255, 255, 255, 0.85);
   z-index: 10;
 }
 
@@ -153,12 +155,12 @@ main {
 }
 
 .drink-item {
-  width: 40vw;
+  width: 40%;
   overflow: hidden;
 }
 
 .drink-item img {
-  width: 40vw;
+  width: 100%;
   object-fit: cover;
 }
 
@@ -170,7 +172,7 @@ main {
 }
 
 .detail-image img {
-  width: 60vw;
+  max-width: 400px;
 }
 
 .detail-name {
