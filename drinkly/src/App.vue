@@ -1,11 +1,12 @@
 <template>
   <div id="app">
+    <div class="header">drinkly</div>
     <main>
       <div class="search-box">
         <input
           type="text"
           class="search-bar"
-          placeholder="Search..."
+          placeholder="Search for ingredient (e.g. water)"
           v-model="query"
           @keypress="fetchDrinksByIngredient"
         />
@@ -21,12 +22,13 @@
         </div>
       </div>
       <div id="drink-details" @click="closeDetails()">
-        <div class="detail-close">X</div>
         <div class="detail-image">
           <img :src="drinkDetails.strDrinkThumb"/>
         </div>
         <div class="detail-name">{{drinkDetails.strDrink}}</div>
         <div class="detail-description">{{drinkDetails.strInstructions}}</div>
+
+        <div class="detail-close">click to close drink details</div>
       </div>
     </main>
   </div>
@@ -87,9 +89,6 @@ export default {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-}
-
-body {
   font-family: "montserrat", sans-serif;
 }
 
@@ -112,13 +111,27 @@ body {
   left: 0;
   right: 0;
   bottom: 0;
-  background-color: rgba(255, 255, 255, 0.85);
+  background-color: rgba(255, 255, 255, 0.95);
   z-index: 10;
+  cursor: pointer;
 }
 
 main {
-  min-height: 100vh;
+  margin-top: 35px;
+  min-height: 20vh;
   padding: 25px;
+}
+
+.header {
+  color: black;
+  font-size: xx-large;
+  width: 100vw;
+  max-width: 800px;
+  position: fixed;
+  top: 0px;
+  background-color: rgba(255, 255, 255, 0.97);
+  padding: 5px;
+  z-index: 20;
 }
 
 .search-box {
@@ -150,14 +163,14 @@ main {
 }
 
 .results {
-  display: flex;
-  flex-flow: row wrap;
-  justify-content: space-between;
+  columns: 2;
+  gap: 0.5em;
 }
 
 .drink-item {
-  width: 40%;
+  width: 100%;
   overflow: hidden;
+  cursor: pointer;
 }
 
 .drink-item:hover {
@@ -170,26 +183,36 @@ main {
 }
 
 .detail-close {
-  color: black;
+  margin-top: 1em;
+  color:  rgba(0, 0, 0, 0.25);
+  cursor: pointer;
+  font-size: small;
 }
 
 .detail-image {
-  margin-top: 12.5vh;
+  margin-top: 10vh;
 }
 
 .detail-image img {
-  max-width: 75vw;
+  width: 60vw;
+  max-width: 400px;
   box-shadow: 0px 0px 16px rgba(0, 0, 0, 0.25);
 }
 
 .detail-name {
   color: black;
   font-size: xx-large;
+  margin: auto;
+  margin-top: 2vh;
+  width: 60vw;
+  max-width: 400px;
 }
 
 .detail-description {
   color: black;
-  max-width: 75vw;
+  width: 60vw;
+  max-width: 400px;
   margin: auto;
+  margin-top: 1vh;
 }
 </style>
