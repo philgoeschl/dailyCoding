@@ -125,9 +125,7 @@ main {
 .header {
   color: black;
   font-size: xx-large;
-  width: 100vw;
-  max-width: 800px;
-  position: fixed;
+  width: 100vw;17;
   top: 0px;
   background-color: rgba(255, 255, 255, 0.97);
   padding: 5px;
