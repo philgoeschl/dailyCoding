@@ -17,7 +17,13 @@ function saveNote(){
 
     var noteElement = document.createElement("div")
     var text = document.createTextNode(note.text)
+    var linebreak = document.createTextNode(' - ')
+    var timestamp = document.createTextNode(note.timestamp)
+
+    
     noteElement.appendChild(text)
+    noteElement.appendChild(linebreak)
+    noteElement.appendChild(timestamp)
     document.getElementById("notes").appendChild(noteElement)
 
 }

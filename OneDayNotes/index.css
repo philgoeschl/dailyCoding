@@ -20,7 +20,9 @@ body{
 
 .note-viewer{
     height: 80vh;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: scroll;
+
 }
 
 .note-viewer div{
